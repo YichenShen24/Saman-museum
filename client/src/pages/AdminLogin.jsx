@@ -11,7 +11,7 @@ const AdminLogin = ({ setAdminToken }) => {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5002/api/discussion/login",
+        `${import.meta.env.VITE_API_BASE_URL}/api/discussion/login`,
         { username, password }
       );
       setAdminToken(response.data.token); // Store the token

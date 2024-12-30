@@ -25,6 +25,7 @@ app.use("/api/survey", surveyRoutes);
 app.use("/api/discussion", discussionRoutes);
 app.use("/api/word-management", wordManagementRoutes); // 注册路由
 
-const PORT = process.env.PORT || 5002;
+// const PORT = process.env.PORT || 5002;
+const PORT = 5002;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

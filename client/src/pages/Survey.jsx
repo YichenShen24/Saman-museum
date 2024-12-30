@@ -3,13 +3,15 @@ import axios from "axios";
 import { io } from "socket.io-client";
 import WordCloud from "../components/WordCloud";
 
-const socket = io("http://localhost:5002");
+const socket = io(`${import.meta.env.VITE_API_BASE_URL}`);
 
 const Survey = () => {
   const [feedback, setFeedback] = useState("");
   const [keywords, setKeywords] = useState({});
 
   useEffect(() => {
+    console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
+
     // Listen for updates from the server
     socket.on("updateWordCloud", (data) => {
       setKeywords(data);
@@ -22,7 +24,9 @@ const Survey = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post("http://localhost:5002/api/survey", { feedback });
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/survey`, {
+        feedback,
+      });
       setFeedback(""); // Clear input after submission
     } catch (error) {
       console.error("Error submitting feedback:", error);

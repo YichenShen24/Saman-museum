@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import WordManagement from "./pages/WordManagement";
 const App = () => {
   const [adminToken, setAdminToken] = useState(null);
+  console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
 
   return (
     <Router>

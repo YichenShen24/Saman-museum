@@ -23,7 +23,9 @@ const Discussion = ({ adminToken }) => {
   // 加载讨论数据并添加 parentId
   const fetchDiscussionsWithParentId = async () => {
     try {
-      const response = await axios.get("http://localhost:5002/api/discussion");
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URL}/api/discussion`
+      );
       const data = response.data;
 
       data.forEach((discussion) => {
@@ -46,7 +48,7 @@ const Discussion = ({ adminToken }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5002/api/discussion",
+        `${import.meta.env.VITE_API_BASE_URL}/api/discussion`,
         {
           author,
           content,

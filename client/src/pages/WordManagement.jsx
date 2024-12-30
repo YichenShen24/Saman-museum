@@ -10,7 +10,7 @@ const WordManagement = ({ adminToken }) => {
   const fetchKeywords = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5002/api/word-management",
+        `${import.meta.env.VITE_API_BASE_URL}/api/word-management`,
         {
           headers: { token: adminToken },
         }
@@ -24,9 +24,12 @@ const WordManagement = ({ adminToken }) => {
 
   const deleteKeyword = async (word) => {
     try {
-      await axios.delete(`http://localhost:5002/api/word-management/${word}`, {
-        headers: { token: adminToken },
-      });
+      await axios.delete(
+        `${import.meta.env.VITE_API_BASE_URL}/api/word-management/${word}`,
+        {
+          headers: { token: adminToken },
+        }
+      );
       fetchKeywords();
     } catch (error) {
       console.error("Error deleting keyword:", error);

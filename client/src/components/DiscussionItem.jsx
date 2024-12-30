@@ -15,7 +15,9 @@ const DiscussionItem = ({
 
     try {
       const response = await axios.post(
-        `http://localhost:5002/api/discussion/${discussion.id}/replies`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/discussion/${
+          discussion.id
+        }/replies`,
         {
           author: "Anonymous", // 或从输入框获取
           content: replyContent,
@@ -34,7 +36,7 @@ const DiscussionItem = ({
       if (level === 0) {
         // 删除主讨论
         await axios.delete(
-          `http://localhost:5002/api/discussion/${discussion.id}`,
+          `${import.meta.env.VITE_API_BASE_URL}/${discussion.id}`,
           {
             headers: { token: adminToken },
           }
@@ -42,7 +44,9 @@ const DiscussionItem = ({
       } else {
         // 删除嵌套回复
         await axios.delete(
-          `http://localhost:5002/api/discussion/${discussion.parentId}/replies/${discussion.id}`,
+          `${import.meta.env.VITE_API_BASE_URL}/${
+            discussion.parentId
+          }/replies/${discussion.id}`,
           { headers: { token: adminToken } }
         );
       }
