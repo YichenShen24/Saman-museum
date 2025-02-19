@@ -24,7 +24,7 @@ const Header = ({ adminToken, setAdminToken }) => {
             to="/survey"
             className="hover:underline hover:text-gray-100 text-lg font-semibold text-white"
           >
-            Survey Board
+            Word Cloud
           </Link>
           {/* 管理页面链接，仅在管理员登录时显示 */}
           {adminToken && (

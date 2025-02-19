@@ -55,9 +55,7 @@ const Survey = () => {
           Submit
         </button>
       </div>
-      <div className="mt-8">
-        {Object.keys(keywords).length > 0 && <WordCloud data={keywords} />}
-      </div>
+      <div className="mt-8">{<WordCloud data={keywords} />}</div>
     </div>
   );
 };
