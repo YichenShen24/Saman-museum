@@ -18,13 +18,14 @@ const Header = ({ adminToken, setAdminToken }) => {
             to="/"
             className="hover:underline hover:text-gray-100 text-lg font-semibold text-white"
           >
-            Discussion Board
+            Word Cloud
           </Link>
+
           <Link
-            to="/survey"
+            to="/discussion"
             className="hover:underline hover:text-gray-100 text-lg font-semibold text-white"
           >
-            Word Cloud
+            Discussion Board
           </Link>
           {/* 管理页面链接，仅在管理员登录时显示 */}
           {adminToken && (

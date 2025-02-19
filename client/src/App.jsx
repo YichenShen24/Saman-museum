@@ -23,8 +23,11 @@ const App = () => {
               path="/admin"
               element={<AdminLogin setAdminToken={setAdminToken} />}
             />
-            <Route path="/" element={<Discussion adminToken={adminToken} />} />
-            <Route path="/survey" element={<Survey />} />
+            <Route
+              path="/discussion"
+              element={<Discussion adminToken={adminToken} />}
+            />
+            <Route path="/" element={<Survey />} />
             <Route
               path="/admin/word-management"
               element={<WordManagement adminToken={adminToken} />}
