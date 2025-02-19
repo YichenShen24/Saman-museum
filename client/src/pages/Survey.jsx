@@ -61,11 +61,11 @@
 // };
 
 // export default Survey;
-
 import React from "react";
 import WordCloud from "../components/WordCloud"; // 引入词云组件
 
 const Survey = () => {
+  // ✅ 直接定义静态数据
   // ✅ 直接定义静态数据
   const keywords = {
     交流: 1,
@@ -121,7 +121,7 @@ const Survey = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300">
       <h1 className="text-4xl font-bold text-blue-900 mb-8">
-        Current Word Cloud
+        Static Word Cloud
       </h1>
       <div className="mt-8">
         {/* ✅ 直接传递静态数据 */}

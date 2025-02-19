@@ -6,8 +6,8 @@ const WordCloud = ({ data }) => {
   const cloudRef = useRef();
 
   useEffect(() => {
-    const width = 600;
-    const height = 400;
+    const width = 800;
+    const height = 1000;
 
     const words = Object.entries(data)
       .sort(([a], [b]) => a.localeCompare(b))
